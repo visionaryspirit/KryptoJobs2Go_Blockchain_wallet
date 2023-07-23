@@ -1,4 +1,4 @@
-## Unit 19 Homework: Cryptocurrency Wallet
+## Integrating payment settlements with Ethereum Blockchain Network: Cryptocurrency Wallets
 
 ![An image shows a wallet with bitcoin.](Images/19-4-challenge-image.png)
 
