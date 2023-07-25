@@ -8,8 +8,6 @@
 
 ### Find, hire, and pay your fintech professionals with ethereum
 
-![paying_your_hire1](Images/paying_your_hire1.png)
-
 ![paying_your_hire1](Images/paying_your_hire2.png)
 
 ![paying_your_hire1](Images/paying_your_hire3.png)
