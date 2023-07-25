@@ -20,21 +20,22 @@ from web3.gas_strategies.time_based import medium_gas_price_strategy
 ################################################################################
 # Wallet functionality
 
-
 def generate_account():
     """Create a digital wallet and Ethereum account from a mnemonic seed phrase."""
     # Fetch mnemonic from environment variable.
     mnemonic = os.getenv("MNEMONIC")
-
+    print(mnemonic)
     # Create Wallet Object
     wallet = Wallet(mnemonic)
+    print(wallet)
 
     # Derive Ethereum Private Key
     private, public = wallet.derive_account("eth")
+    print(private)
 
     # Convert private key into an Ethereum account
     account = Account.privateKeyToAccount(private)
-
+    print(account)
     return account
 
 
@@ -69,7 +70,7 @@ def send_transaction(w3, account, to, wage):
         "from": account.address,
         "value": value,
         "gas": gasEstimate,
-        "gasPrice": 0,
+        "gasPrice": 20000000000,
         "nonce": w3.eth.getTransactionCount(account.address),
     }
 

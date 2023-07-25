@@ -80,7 +80,7 @@ w3 = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:7545"))
 # @TODO:
 # From `crypto_wallet.py import the functions generate_account, get_balance,
 #  and send_transaction
-# YOUR CODE HERE
+from crypto_wallet import generate_account, get_balance, send_transaction
 
 ################################################################################
 # KryptoJobs2Go Candidate Information
@@ -90,28 +90,28 @@ w3 = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:7545"))
 candidate_database = {
     "Lane": [
         "Lane",
-        "0xaC8eB8B2ed5C4a0fC41a84Ee4950F417f67029F0",
+        "0x04c3b85FCff55343fb89E19dBf71F2Efa3867388",
         "4.3",
         0.20,
         "Images/lane.jpeg",
     ],
     "Ash": [
         "Ash",
-        "0x2422858F9C4480c2724A309D58Ffd7Ac8bF65396",
+        "0x6FF5a84b91b6b24931Be1EAD6dAA98B83AB3Ac87",
         "5.0",
         0.33,
         "Images/ash.jpeg",
     ],
     "Jo": [
         "Jo",
-        "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45",
+        "0x9b2e4a578bFbC9D18a30c7b70F569418B6D7b6e5",
         "4.7",
         0.19,
         "Images/jo.jpeg",
     ],
     "Kendall": [
         "Kendall",
-        "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45",
+        "0x180252e13431FDe0de6658A28f2E62645D914978",
         "4.1",
         0.16,
         "Images/kendall.jpeg",
@@ -156,7 +156,7 @@ st.sidebar.markdown("## Client Account Address and Ethernet Balance in Ether")
 
 # @TODO:
 #  Call the `generate_account` function and save it as the variable `account`
-# YOUR CODE HERE
+account = generate_account()
 
 ##########################################
 
@@ -172,8 +172,8 @@ st.sidebar.write(account.address)
 # @TODO
 # Call `get_balance` function and pass it your account address
 # Write the returned ether balance to the sidebar
-# YOUR CODE HERE
-
+my_balance = get_balance(w3, account.address) 
+st.sidebar.write(my_balance)
 ##########################################
 
 # Create a select box to chose a FinTech Hire candidate
@@ -263,11 +263,12 @@ st.sidebar.markdown("## Total Wage in Ether")
 # Calculate total `wage` for the candidate by multiplying the candidate’s hourly
 # rate from the candidate database (`candidate_database[person][3]`) by the
 # value of the `hours` variable
-# YOUR CODE HERE
+
+wage = candidate_database[person][3] * hours
 
 # @TODO
 # Write the `wage` calculation to the Streamlit sidebar
-# YOUR CODE HERE
+st.sidebar.write(wage)
 
 ##########################################
 # Step 2 - Part 2:
@@ -294,7 +295,7 @@ if st.sidebar.button("Send Transaction"):
     # Call the `send_transaction` function and pass it 3 parameters:
     # Your `account`, the `candidate_address`, and the `wage` as parameters
     # Save the returned transaction hash as a variable named `transaction_hash`
-    # YOUR CODE HERE
+    transaction_hash = send_transaction(w3, account, candidate_address, wage)
 
     # Markdown for the transaction hash
     st.sidebar.markdown("#### Validated Transaction Hash")
