@@ -22,7 +22,17 @@
 
 ![Ganache](Images/hash_details.png)
 
-![Balance](balance_total_customer.png)
+![Balance](Images/balance_total_customer.png)
 
-![Balance](balance_remains_customer.png) 
+![Balance](Images/balance_remains_customer.png) 
+
+## Application work for the application 
+
+- All work for the KryptoJobs2Go application interface can be accessed in the following files and folder respectively:
+
+[crypto_wallet.py](https://github.com/visionaryspirit/KryptoJobs2Go_Blockchain_wallet/blob/main/crypto_wallet.py) 
+
+[krypto_jobs.py](https://github.com/visionaryspirit/KryptoJobs2Go_Blockchain_wallet/blob/main/krypto_jobs.py)
+
+[Images](https://github.com/visionaryspirit/KryptoJobs2Go_Blockchain_wallet/tree/main/Images/)
 
