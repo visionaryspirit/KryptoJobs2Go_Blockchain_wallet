@@ -6,6 +6,7 @@
 # into the KryptoJobs2Go interface program that is found in the `krypto_jobs.py` file.
 
 ################################################################################
+
 # Imports
 import os
 import requests
